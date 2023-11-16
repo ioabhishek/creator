@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useState } from "react";
+
 import styles from "./poll.module.css";
 import Countselector from "./Countselector";
 function Poll() {
@@ -48,8 +49,10 @@ function Poll() {
       <div className={styles.selector}>
       <h2 className={styles.subheading}>Question</h2>
       <Countselector counter={counter} setCounter={setCounter} />
-      <input type="checkbox" className={styles.checkbox} id="check"></input>
-      <label className={styles.label} htmlFor="check">Allow multiple options</label>
+      <div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+  <label class="form-check-label" for="flexSwitchCheckDefault">Allow Multiple voting</label>
+</div>
       </div>
       <div>
         <input
