@@ -1,7 +1,11 @@
 import { Inter } from 'next/font/google'
+import {M_PLUS_Rounded_1c} from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = M_PLUS_Rounded_1c({  weight: ["500", "700"],   
+
+subsets: ["latin"],
+variable: "--poppins-font",})
 
 export const metadata = {
   title: 'Create Next App',

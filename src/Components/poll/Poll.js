@@ -27,6 +27,7 @@ function Poll() {
         <input
           type="text"
           className={styles.input}
+          placeholder={"Option "+(i+1)} 
           onChange={(e) => {
             setname((prevName) => {
                 const updatedArray = [...prevName];
@@ -57,6 +58,7 @@ function Poll() {
       <div>
         <input
           type="text"
+          placeholder="Enter your question"
           className={styles.input}
           onChange={(e) => setPolltop(e.target.value)}
         ></input>
