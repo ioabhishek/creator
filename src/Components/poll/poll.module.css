@@ -1,5 +1,5 @@
 .heading{
-   
+   font-weight: bolder;
    margin: auto;
    margin-top: 30px;
     width: 95vw;
@@ -14,7 +14,7 @@
     font-size: 1.5rem;
     text-align: center;
     padding: 15px;
-   
+   font-weight: bold;
     width: 200px;
     margin: 10px;
    
@@ -31,11 +31,13 @@
     border: solid 2px #e6e6e6;
     margin-left: 40px;
     width: 95vw;
+    font-weight: bold;
 }
 .selector{
     margin-top: 30px;
     display: flex;
     flex-direction: row;
+    font-weight: bold;
     gap: 100px;
     align-items: center;
 }

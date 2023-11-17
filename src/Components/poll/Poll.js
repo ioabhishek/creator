@@ -6,10 +6,10 @@ import styles from "./poll.module.css";
 import Countselector from "./Countselector";
 function Poll() {
   const [polltop, setPolltop] = useState([]);
-  const [maxpoll, setmaxpoll] = useState(3);
+
   const [name, setname] = useState([]);
   const [counter, setCounter] = useState(1);
-  const narray = [];
+
   function printweer() {
     console.log(name);
   }

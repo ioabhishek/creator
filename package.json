@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hashicorp/react-feedback-form": "^0.2.5",
     "bootstrap": "^5.3.2",
+    "feedbackfin_react": "^2.0.0",
     "next": "14.0.2",
     "react": "^18",
+    "react-basic-design": "^0.1.9",
     "react-dom": "^18"
   },
   "devDependencies": {
