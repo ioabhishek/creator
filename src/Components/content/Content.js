@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { useState } from "react";
 import SVGComponent from "./SVGComponent";
@@ -8,9 +9,12 @@ function Content() {
   const [uploadtype, setUploadtype] = useState("text");
   const changeHandler = (event) => {
     setSelectedFile(event.target.files[0]);
-    setIsFilePicked(!isFilePicked);
+    setIsFilePicked(true);
   };
-
+  const remover = () => {
+    setSelectedFile(null);
+    setIsFilePicked(false);
+  }
   return (
     <div
       style={{
@@ -85,8 +89,7 @@ function Content() {
         )}
         {!(uploadtype === "text") && (
           <div>
-            {!isFilePicked && <div className={styles.uploaddiv}>content</div>}
-            {isFilePicked && (
+             <div className={styles.uploaddiv}>  {isFilePicked && (
               <div>
                 {selectedFile.type.startsWith("video/") ? (
                   <div>
@@ -117,9 +120,11 @@ function Content() {
                   </div>
                 )}
               </div>
-            )}
+            )}</div>
+          
 
             <input type="file" name="file" onChange={changeHandler} />
+            <button type="button" class="btn btn-danger" onClick={remover}>Remove</button>
           </div>
         )}
       </div>
