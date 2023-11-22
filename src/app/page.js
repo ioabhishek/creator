@@ -6,11 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css"; // Import bootstrap CSS
 import "./page.module.css";
 import Feedback1 from '@/Components/feedback/Feedback1';
 import Feedback from '@/Components/feedback/Feedback';
+import Content from '@/Components/content/Content';
 export default function Home() {
   return (
     <div>
     {/* <Poll/> */}
-    <Feedback1 />
+   <Content/>
     {/* <Feedback /> */}
     </div>
   )
