@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import { useState } from "react";
 import SVGComponent from "./SVGComponent";
@@ -14,7 +14,7 @@ function Content() {
   const remover = () => {
     setSelectedFile(null);
     setIsFilePicked(false);
-  }
+  };
   return (
     <div
       style={{
@@ -89,42 +89,68 @@ function Content() {
         )}
         {!(uploadtype === "text") && (
           <div>
-             <div className={styles.uploaddiv}>  {isFilePicked && (
-              <div>
-                {selectedFile.type.startsWith("video/") ? (
-                  <div>
-                    <h2>Preview:</h2>
-                    <video
-                      controls
-                      width="400"
-                      height="300"
-                      className="mb-3"
-                      style={{ maxWidth: "100%" }}
-                    >
-                      <source
-                        src={URL.createObjectURL(selectedFile)}
-                        type={selectedFile.type}
-                      />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                ) : (
-                  <div>
-                    <h2>Preview:</h2>
+            <div className={styles.uploaddiv}>
+              {" "}
+              {isFilePicked && (
+                <div>
+                  {selectedFile &&
+                  selectedFile.type &&
+                  selectedFile.type.startsWith("video/") ? (
+                    <div>
+                      <h2>Preview:</h2>
+                      <video
+                        controls
+                        width="400"
+                        height="300"
+                        className="mb-3"
+                        style={{ maxWidth: "100%" }}
+                      >
+                        <source
+                          src={URL.createObjectURL(selectedFile)}
+                          type={selectedFile.type}
+                        />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  ) : (
+                    <div>
+                      {selectedFile && selectedFile.type && (
+                        <>
+                          <h2>Preview:</h2>
 
-                    <img
-                      src={URL.createObjectURL(selectedFile)}
-                      alt="Preview"
-                      style={{ maxWidth: "100%", maxHeight: "300px" }}
-                    />
-                  </div>
-                )}
-              </div>
-            )}</div>
-          
+                          <img
+                            src={URL.createObjectURL(selectedFile)}
+                            alt="Preview"
+                            style={{ maxWidth: "100%", maxHeight: "300px" }}
+                          />
+                        </>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
 
-            <input type="file" name="file" onChange={changeHandler} />
-            <button type="button" class="btn btn-danger" onClick={remover}>Remove</button>
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupFile01">
+                Upload
+              </label>
+              <input
+                type="file"
+                class="form-control"
+                id="inputGroupFile01"
+                onChange={changeHandler}
+                accept={
+                  uploadtype === "image"
+                    ? ".gif,.jpg,.jpeg,.png,.webp"
+                    : ".mp4,.mkv"
+                }
+              />
+            </div>
+
+            <button type="button" class="btn btn-danger" onClick={remover}>
+              Remove
+            </button>
           </div>
         )}
       </div>
